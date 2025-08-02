@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 import Dashhboard from "./pages/Dashboard";
@@ -15,7 +15,8 @@ import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
+
       <AuthProvider>
         <InventoryProvider>
           <div className="h-screen grid grid-rows-[auto_1fr] grid-cols-1 md:grid-cols-[250px_1fr]">
@@ -45,7 +46,7 @@ function App() {
           </div>
         </InventoryProvider>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
